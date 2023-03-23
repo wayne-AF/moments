@@ -25,6 +25,7 @@ const SignUpForm = () => {
   });
   const { username, password1, password2 } = signUpData;
 
+  // useState hook with empty object to store errors
   const [errors, setErrors] = useState({});
 
   // Allows us to call push method with where we want to go in
@@ -128,7 +129,7 @@ const SignUpForm = () => {
             >
               Sign up
             </Button>
-            {/* Alert for when passwords don't match */}
+            {/* Alert for other errors */}
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
                 {message}
